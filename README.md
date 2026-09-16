@@ -12,7 +12,7 @@ Configure Git pour travailler pendant 12 heures sans ressaisir vos identifiants,
 
 Ce script exécute :
 - `git config --global user.name "Stephane Cassar"`
-- `git config --global user.email "stephane.cassar@teamwork.net"`
+- `git config --global user.email "stephane.cassar@gmail.com"`
 - `git config --global init.defaultBranch main`
 - `git config --global credential.helper 'cache --timeout=43200'`
 
