@@ -37,11 +37,14 @@ export GITEA_TOKEN="votre_token_gitea"
 export GITEA_URL="https://git.scsd.fr"
 ```
 
-Rendre le script exécutable :
+Rendre les scripts exécutables et lancer l'initialisation :
 
 ```bash
-chmod +x gh_repo.py
+chmod +x gh_repo.py init_github.sh
+./init_github.sh
 ```
+
+Le script `init_github.sh` configure automatiquement votre identité Git globale (`user.name`, `user.email`), la branche par défaut (`main`), le `credential.helper`, et vérifie la connectivité à l'API GitHub sans stocker de secret en dur.
 
 ---
 
