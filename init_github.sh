@@ -3,7 +3,7 @@ set -e
 
 # Configuration de l'identité Git
 git config --global user.name "Stephane Cassar"
-git config --global user.email "stephane.cassar@teamwork.com"
+git config --global user.email "stephane.cassar@teamwork.net"
 git config --global init.defaultBranch main
 
 # Cache les identifiants (PAT) en mémoire vive pendant 12h (43200 s)
