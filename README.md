@@ -2,6 +2,16 @@
 
 Scripts d'outillage Git/GitHub publics, sans aucun credential.
 
+## Prerequisites on github.com
+
+Settings > Developper Settings (https://github.com/settings/apps)
+- Personal Access Token
+- Fine-grained tokens
+- Generate new token
+- permissions : repository - content - read and write, metadata - read only, workflow - read only
+
+![alt text](image-1.png)
+
 ## Initialisation machine cliente (`init_github.sh`)
 
 Configure Git pour travailler pendant 12 heures sans ressaisir vos identifiants, sans jamais les enregistrer sur le disque :
@@ -21,3 +31,4 @@ Ce script exécute :
 ## Gestionnaire de dépôts (`gh_repo.py`)
 
 Voir [gh_repo.md](gh_repo.md) pour la documentation complète de gestion des dépôts.
+
