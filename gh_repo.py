@@ -866,8 +866,8 @@ def migrate_repo(args: argparse.Namespace) -> None:
         print()
         delete_gitea_repo(del_args)
 
-        # Propose cloning the new GitHub repo into ~/src/twmk/<github_name>
-        target_clone_dir = os.path.expanduser(f"~/src/twmk/{github_name}")
+        # Propose cloning the new GitHub repo into ~/src/tmwk/<github_name>
+        target_clone_dir = os.path.expanduser(f"~/src/tmwk/{github_name}")
         clone_choice = input(
             f"\n👉 Do you want to clone the new GitHub repository into '{target_clone_dir}'? (y/N): "
         ).strip().lower()
@@ -930,7 +930,7 @@ def trim_repo(args: argparse.Namespace) -> None:
     - Keep commits from the last --months (default: 3) and at least --min-commits (default: 3).
     - Remove .gitea directory and clean Gitea-specific references if present.
     - Force-push trimmed history to GitHub.
-    - Optionally reset/align local clone if present in ~/src/twmk/<repo>.
+    - Optionally reset/align local clone if present in ~/src/tmwk/<repo>.
     """
     input_name = args.name.strip()
     parsed_owner = None
@@ -1010,8 +1010,12 @@ def trim_repo(args: argparse.Namespace) -> None:
     print(f"\n🎉 Successfully trimmed repository '{target_full_name}' on GitHub!")
     print(f"   GitHub repository URL: https://github.com/{owner}/{repo}")
 
-    # Check if a local clone exists in ~/src/twmk/<repo>
-    local_dir = os.path.expanduser(f"~/src/twmk/{repo}")
+    # Check if a local clone exists in ~/src/tmwk/<repo>
+    local_dir = os.path.expanduser(f"~/src/tmwk/{repo}")
+    if not os.path.isdir(local_dir):
+        alt_dir = os.path.expanduser(f"~/src/twmk/{repo}")
+        if os.path.isdir(alt_dir):
+            local_dir = alt_dir
     if os.path.isdir(local_dir):
         sync_choice = input(
             f"\n👉 Found local clone at '{local_dir}'. Reset it to match the newly trimmed history? (y/N): "

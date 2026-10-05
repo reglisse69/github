@@ -124,7 +124,7 @@ Migre un dépôt complet depuis Gitea (par défaut `https://git.scsd.fr`) vers G
 3. Nettoie les références internes Gitea (`refs/pull/*`) et purge le dossier `.gitea`.
 4. Raccourcit l'historique Git (par défaut conserve les 3 derniers mois / 3 commits minimum).
 5. Pousse le miroir complet vers GitHub.
-6. Propose de supprimer le dépôt source sur Gitea et de cloner le nouveau dépôt GitHub dans `~/src/twmk/<target>`.
+6. Propose de supprimer le dépôt source sur Gitea et de cloner le nouveau dépôt GitHub dans `~/src/tmwk/<target>`.
 
 ```bash
 # Migration simple (renommage automatique conventionnel e.g. python_centreon -> centreon-python)
@@ -150,7 +150,7 @@ Permet de réduire la taille d'un dépôt GitHub en ne conservant que les commit
 # Personnaliser la période et le nombre minimum de commits
 ./gh_repo.py trim mon-repo --months 6 --min-commits 5 -y
 
-# Si un clone local existe dans ~/src/twmk/mon-repo, propose de le réaligner et d'exécuter git gc
+# Si un clone local existe dans ~/src/tmwk/mon-repo, propose de le réaligner et d'exécuter git gc
 ```
 
 ---
@@ -189,8 +189,8 @@ Exemple de sortie :
 ```text
 REPOSITORY       SOURCE    LAST COMMIT           PATH
 ----------------------------------------------------------------------------------------------------
-centreon-ansible GitHub    2026-02-10 (1mo ago)  twmk/centreon-ansible
-github           GitHub    2026-03-16 (just now) twmk/github
+centreon-ansible GitHub    2026-02-10 (1mo ago)  tmwk/centreon-ansible
+github           GitHub    2026-03-16 (just now) tmwk/github
 archives         Gitea     2025-11-20 (4mo ago)  archives
 ----------------------------------------------------------------------------------------------------
 Total: 3 repositories (1 Gitea, 2 GitHub, 0 Other) in ~/src
